@@ -11,6 +11,8 @@ Run as an administrator (you'll probably get a warning for icon, which I didn't 
 
 ## Features
 
+![Step 1](https://github.com/raufie/strategic_blocking/blob/master/images/step1.jpg?raw=true)
+
 ### Basic Features
 
 - Manage the time you give to work and make things simpler if anything is overwhelming by starting with 5 minutes
