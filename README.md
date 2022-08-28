@@ -1,6 +1,6 @@
-# Systematic Blocker
+# Strategic Blocker
 
-Ignore the flashy name, The reason for making this is simple. To manage time more simply and force one to work, at the same time keeping track of the data. I keep track of my personal data (like hours worked) and this also serves that purpose... In simple terms this is what this app serves
+Ignore the flashy name (it was 2am when i wrote this), The reason for making this is simple. To manage time more simply and force one to work, at the same time keeping track of the data. I keep track of my personal data (like hours worked) and this also serves that purpose... In simple terms this is what this app serves
 
 ## Installation
 
