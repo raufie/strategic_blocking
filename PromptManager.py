@@ -9,6 +9,8 @@ import sys
 class PromptManager:
     def __init__(self):
         self.toast = ToastNotifier()
+        self.pressed = "N"
+        #N, C, P
 
     def start_up(self):
         print(
@@ -24,7 +26,11 @@ class PromptManager:
         return wrapped
 
 
-# CLASS METHODS
+# base CLASS METHODS
+
+    def update_state(self, state):
+        self.pressed = state
+# prompt methods
 
     @_cleaner_print
     def get_task_info(self):
@@ -68,14 +74,20 @@ class PromptManager:
 
                 # in time loop
 
+                keyboard.on_press_key("c", lambda x: self.update_state("C"))
+                keyboard.on_press_key("C", lambda x: self.update_state("C"))
+                keyboard.on_press_key("p", lambda x: self.update_state("P"))
+                keyboard.on_press_key("P", lambda x: self.update_state("P"))
+
                 while True:
                     # op = msvcrt.getch().strip()
-                    if keyboard.is_pressed("C") or keyboard.is_pressed("c"):
+                    if self.pressed == "C":
+                        self.update_state("N")
                         print("Cancelling Timer...")
                         return {'time': -1.0}
 
-                    if keyboard.is_pressed("P") or keyboard.is_pressed("p"):
-
+                    if self.pressed == "P":
+                        self.update_state("N")
                         return {'time': time.time() - start_time, 'timestamp': time.time()}
 
                     print("\r"+str(int(time.time() - start_time) // 60) +
@@ -93,6 +105,8 @@ class PromptManager:
                             icon_path=''
                         )
                         return {'time': time_amount, 'timestamp': time.time()}
+                    time.sleep(1.0)
+
             else:
                 return {'time': -1.0}
         else:
