@@ -11,7 +11,7 @@ Run as an administrator (you'll probably get a warning for icon, which I didn't 
 
 ## Features
 
-![Step 1](https://github.com/raufie/strategic_blocking/blob/master/images/step1.jpg?raw=true)
+![Step 1](https://github.com/raufie/strategic_blocking/blob/master/images/step1.PNG?raw=true)
 
 ### Basic Features
 
@@ -22,6 +22,7 @@ Run as an administrator (you'll probably get a warning for icon, which I didn't 
   - Notify the user when the time is over
   - Give user the options to move to the next step (don't go automatically)
   - Give user the ability to cancel any 'focus time' whenever they want
+    ![Step 1](https://github.com/raufie/strategic_blocking/blob/master/images/step2.PNG?raw=true)
 
 ### Device Specs
 
