@@ -7,3 +7,4 @@ data.json
 config.json
 main.spec
 SystematicBlocker.spec
+dist/
