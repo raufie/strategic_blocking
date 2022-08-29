@@ -53,6 +53,11 @@ def main():
             data_manager.save()
             block_counter += 1
 
+        if prompt_result['time'] != None and int(prompt_result['time']) == -5:
+            print(
+                "\u001b[33m"+f"{data_manager.get_todays_time():.2f}"+"(s)\u001b[0m")
+            input("press any key to continue...")
+
         os.system("cls")
 
 

@@ -9,3 +9,4 @@ main.spec
 SystematicBlocker.spec
 dist/
 stuff.txt
+__pycache__/

@@ -1,5 +1,6 @@
 import json
 import os
+import time
 
 
 class DataManager:
@@ -44,3 +45,18 @@ class DataManager:
 
     def set_path(self, path):
         self.path = path
+
+    def get_todays_time(self):
+        data = self.data
+        todayTime = time.localtime(time.time())
+        todayTimeHash = hash(
+            (todayTime.tm_year, todayTime.tm_mon, todayTime.tm_mday))
+        totalTimeAmount = 0.0
+        for item in data:
+
+            timeLocal = time.localtime(item['timestamp'])
+            timeHash = hash(
+                (timeLocal.tm_year, timeLocal.tm_mon, timeLocal.tm_mday))
+            if timeHash == todayTimeHash:
+                totalTimeAmount += item['time_amount']
+        return totalTimeAmount

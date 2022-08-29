@@ -2,6 +2,7 @@ import msvcrt
 import os
 import time
 import keyboard
+import threading
 from win10toast import ToastNotifier
 import sys
 
@@ -10,7 +11,7 @@ class PromptManager:
     def __init__(self):
         self.toast = ToastNotifier()
         self.pressed = "N"
-        #N, C, P
+        # N, C, P
 
     def start_up(self):
         print(
@@ -25,14 +26,21 @@ class PromptManager:
             return to_return
         return wrapped
 
+    # THREADs callbacks
+    def inputThread(self):
+        op = msvcrt.getch().strip()
+        if op == b"p" or op == b"P":
+            self.update_state("P")
+        elif op == b"c" or op == b"C":
+            self.update_state("C")
 
-# base CLASS METHODS
+        # base CLASS METHODS
 
     def update_state(self, state):
         self.pressed = state
 # prompt methods
 
-    @_cleaner_print
+    @ _cleaner_print
     def get_task_info(self):
         print("Please type in the category for your task: \u001b[33m", end="")
         category = input()
@@ -40,7 +48,7 @@ class PromptManager:
 
         return category.strip()
 
-    @_cleaner_print
+    @ _cleaner_print
     def waiting_prompt(self, time_amount=5.0, block_number=0):
         """
             @dev: this function confirms whether the user wants to start the task or not
@@ -54,13 +62,18 @@ class PromptManager:
         # N: no
         # C cancel
         #
-        print("Press [S] to start timer. Press [X] to exit app.")
+        print(
+            "Press [S] to start timer. Press [X] to exit app. Press [T] to view today's time worked")
         op = msvcrt.getch().strip()
 
         if op == b"X" or op == b"x":
             print("EXITING PROGRAM...")
             del self.toast
             sys.exit()
+        elif op == b"t" or op == b"T":
+
+            print("Viewing today's total time worked (in seconds)...")
+            return {'time': -5.0}
         elif op == b"S" or op == b"s":
             confirmed = self.confirm_prompt()
             if confirmed:
@@ -74,11 +87,12 @@ class PromptManager:
 
                 # in time loop
 
-                keyboard.on_press_key("c", lambda x: self.update_state("C"))
-                keyboard.on_press_key("C", lambda x: self.update_state("C"))
-                keyboard.on_press_key("p", lambda x: self.update_state("P"))
-                keyboard.on_press_key("P", lambda x: self.update_state("P"))
-
+                # keyboard.on_press_key("c", lambda x: self.update_state("C"))
+                # keyboard.on_press_key("C", lambda x: self.update_state("C"))
+                # keyboard.on_press_key("p", lambda x: self.update_state("P"))
+                # keyboard.on_press_key("P", lambda x: self.update_state("P"))
+                t1 = threading.Thread(target=self.inputThread, args=())
+                t1.start()
                 while True:
                     # op = msvcrt.getch().strip()
                     if self.pressed == "C":
@@ -112,7 +126,7 @@ class PromptManager:
         else:
             return {'time': -1.0}
 
-    @_cleaner_print
+    @ _cleaner_print
     def confirm_prompt(self):
         print("Are you sure? [Y] for yes, anything else for no [N]")
         op = msvcrt.getch().strip()
@@ -121,6 +135,6 @@ class PromptManager:
         else:
             return False
 
-    @_cleaner_print
+    @ _cleaner_print
     def time_prompt_loop(self, _op):
         pass
