@@ -30,11 +30,13 @@ def main():
 
     # while not has_ended:
     prev_time = 0
+    cumulative = 0
     while(True):
 
         # print priv data info
         if (block_counter > 0):
             print("Block Finished... "+get_time_string(prev_time))
+            print("Cumulative Time... "+get_time_string(cumulative))
 
         print("\u001b[33mNext Block# \u001b[0m " + str(block_counter+1))
         time_amount = config[0] if block_counter == 0 else config[1]
@@ -52,10 +54,11 @@ def main():
             prev_time = prompt_result['time']
             data_manager.save()
             block_counter += 1
+            cumulative += prev_time
 
         if prompt_result['time'] != None and int(prompt_result['time']) == -5:
             print(
-                "\u001b[33m"+f"{data_manager.get_todays_time():.2f}"+"(s)\u001b[0m")
+                "\u001b[33m"+f"{get_time_string(data_manager.get_todays_time())}"+"(s)\u001b[0m")
             input("press any key to continue...")
 
         os.system("cls")
