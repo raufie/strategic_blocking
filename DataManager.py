@@ -8,7 +8,9 @@ class DataManager:
         self.path = path
         self.data = self.get_data_from_file(path)
 
-    def get_data_from_file(self, path):
+    def get_data_from_file(self, path=None):
+        if path == None:
+            path = self.path
         try:
             f = open(os.path.join(path, "data.json"), "r")
             print(

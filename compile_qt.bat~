@@ -1,0 +1,2 @@
+pyuic5 "./QtWidgets/MainWindow.ui" -o "./QtWidgets/MainWindow.py"
+

@@ -1,2 +1,3 @@
-pyinstaller StrategicBlocker.py --onefile -p "E:\Learning\Software Engineering\Projects\systematic_blocker\Lib\site-packages"
-copy "E:\Learning\Software Engineering\Projects\systematic_blocker\dist\StrategicBlocker.exe" "E:\Management\StrategicBlocker.exe" /Y
+pyinstaller --onefile MainUI.py -w -p "E:\Learning\Software Engineering\Projects\systematic_blocker\Lib\site-packages" 
+
+

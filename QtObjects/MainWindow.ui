@@ -1,0 +1,1215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1261</width>
+    <height>932</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(0,116,246);
+font: 20pt &quot;Century Gothic&quot;;
+background-color: qradialgradient(cx:0, cy:0, radius: 1,
+                fx:0.5, fy:0.5, stop:0 rgba(173,0,246,1) , stop:1 rgba(148,158,233,1) );</string>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab_3">
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <attribute name="title">
+        <string>Timer Setup</string>
+       </attribute>
+       <widget class="QLabel" name="label">
+        <property name="geometry">
+         <rect>
+          <x>450</x>
+          <y>10</y>
+          <width>311</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background: white;
+border-radius: 25%</string>
+        </property>
+        <property name="text">
+         <string>Timer Setup</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_2">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>80</y>
+          <width>131</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background: white;
+border-radius: 10%</string>
+        </property>
+        <property name="text">
+         <string>Blocks</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="titleInput">
+        <property name="geometry">
+         <rect>
+          <x>730</x>
+          <y>200</y>
+          <width>261</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color:rgb(206, 206, 206);
+border-radius: 5%;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_3">
+        <property name="geometry">
+         <rect>
+          <x>730</x>
+          <y>140</y>
+          <width>131</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background: white;
+border-radius: 10%</string>
+        </property>
+        <property name="text">
+         <string>Task Title</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_4">
+        <property name="geometry">
+         <rect>
+          <x>730</x>
+          <y>260</y>
+          <width>141</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background: white;
+border-radius: 10%</string>
+        </property>
+        <property name="text">
+         <string>Category</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="categoryCombo">
+        <property name="geometry">
+         <rect>
+          <x>730</x>
+          <y>320</y>
+          <width>271</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:rgb(206, 206, 206);
+border-radius: 5%;</string>
+        </property>
+        <item>
+         <property name="text">
+          <string>Stuff1</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Stuff2</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QPushButton" name="startBtn">
+        <property name="geometry">
+         <rect>
+          <x>730</x>
+          <y>400</y>
+          <width>161</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color:white;
+background-color:rgb(4, 168, 227);
+border-radius:5%;</string>
+        </property>
+        <property name="text">
+         <string>Start Timer</string>
+        </property>
+       </widget>
+       <widget class="QSplitter" name="splitter">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>140</y>
+          <width>521</width>
+          <height>521</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background: rgba(0,0,0,0)</string>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <widget class="QPushButton" name="delete_block_btn">
+         <property name="styleSheet">
+          <string notr="true">color:white;
+background-color: rgb(255, 82, 39);
+border-radius:5%;</string>
+         </property>
+         <property name="text">
+          <string>Delete Block</string>
+         </property>
+        </widget>
+        <widget class="QTableWidget" name="tableWidget">
+         <property name="styleSheet">
+          <string notr="true">background: rgba(255,255,255,0.8);
+border-radius: 10%
+</string>
+         </property>
+         <property name="sizeAdjustPolicy">
+          <enum>QAbstractScrollArea::AdjustToContents</enum>
+         </property>
+         <column>
+          <property name="text">
+           <string>Hours</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Min</string>
+          </property>
+         </column>
+        </widget>
+        <widget class="QPushButton" name="add_block_btn">
+         <property name="styleSheet">
+          <string notr="true">color:white;
+background-color:rgb(0, 116, 246);
+border-radius:5%;</string>
+         </property>
+         <property name="text">
+          <string>Add Block</string>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_4">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(0,116,246);
+font: 20pt &quot;Century Gothic&quot;;
+background-color: qradialgradient(cx:0, cy:0, radius: 1,
+                fx:0.5, fy:0.5, stop:0 rgb(5, 159, 241) , stop:1 rgba(148,158,233,1) );</string>
+       </property>
+       <attribute name="title">
+        <string>Stats</string>
+       </attribute>
+       <widget class="QLabel" name="label_5">
+        <property name="geometry">
+         <rect>
+          <x>450</x>
+          <y>10</y>
+          <width>311</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background: white;
+border-radius: 25%</string>
+        </property>
+        <property name="text">
+         <string>Stats</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_11">
+        <property name="geometry">
+         <rect>
+          <x>609</x>
+          <y>90</y>
+          <width>551</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background: rgb(121, 121, 121);
+border-radius: 25%;
+color:white</string>
+        </property>
+        <property name="text">
+         <string>Moving Average (n days) at time worked</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_8">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>90</y>
+          <width>261</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>44</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background: rgb(121, 121, 121);
+border-radius: 25%;
+color:white</string>
+        </property>
+        <property name="text">
+         <string>Daily Time Worked</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QWidget" name="layoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>140</y>
+          <width>271</width>
+          <height>101</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <item>
+            <widget class="QLabel" name="label_6">
+             <property name="styleSheet">
+              <string notr="true">background: white;
+border-radius: 10%</string>
+             </property>
+             <property name="text">
+              <string>FROM</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QDateEdit" name="from_daily">
+             <property name="styleSheet">
+              <string notr="true">background:white;</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <widget class="QLabel" name="label_7">
+             <property name="styleSheet">
+              <string notr="true">background: white;
+border-radius: 10%</string>
+             </property>
+             <property name="text">
+              <string>TO</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QDateEdit" name="to_daily">
+             <property name="styleSheet">
+              <string notr="true">background:white;</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QDateEdit" name="to_avg">
+        <property name="geometry">
+         <rect>
+          <x>729</x>
+          <y>179</y>
+          <width>171</width>
+          <height>37</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:white;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_9">
+        <property name="geometry">
+         <rect>
+          <x>619</x>
+          <y>179</y>
+          <width>71</width>
+          <height>33</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background: white;
+border-radius: 10%</string>
+        </property>
+        <property name="text">
+         <string>TO</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QDateEdit" name="from_avg">
+        <property name="geometry">
+         <rect>
+          <x>729</x>
+          <y>139</y>
+          <width>171</width>
+          <height>37</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:white;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_10">
+        <property name="geometry">
+         <rect>
+          <x>619</x>
+          <y>139</y>
+          <width>91</width>
+          <height>33</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background: white;
+border-radius: 10%</string>
+        </property>
+        <property name="text">
+         <string>FROM</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_12">
+        <property name="geometry">
+         <rect>
+          <x>929</x>
+          <y>139</y>
+          <width>81</width>
+          <height>33</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background: white;
+border-radius: 10%</string>
+        </property>
+        <property name="text">
+         <string>Days</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="n_days">
+        <property name="geometry">
+         <rect>
+          <x>1019</x>
+          <y>139</y>
+          <width>81</width>
+          <height>35</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color:rgb(206, 206, 206);
+border-radius: 5%;</string>
+        </property>
+       </widget>
+       <widget class="PlotWidget" name="map_1_widget" native="true">
+        <property name="geometry">
+         <rect>
+          <x>109</x>
+          <y>259</y>
+          <width>421</width>
+          <height>411</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:rgba(0,0,0,0.0);border-radius:25%</string>
+        </property>
+       </widget>
+       <widget class="PlotWidget" name="map_2_widget" native="true">
+        <property name="geometry">
+         <rect>
+          <x>619</x>
+          <y>259</y>
+          <width>441</width>
+          <height>411</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:rgba(0,0,0,0.0);border-radius:25%</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_5">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(0,116,246);
+font: 20pt &quot;Century Gothic&quot;;
+background-color: qradialgradient(cx:0, cy:0, radius: 1,
+                fx:0.5, fy:0.5, stop:0 rgb(255, 144, 89), stop:1 rgba(243, 255, 8, 0.5) );</string>
+       </property>
+       <attribute name="title">
+        <string>Settings</string>
+       </attribute>
+       <widget class="QLabel" name="label_13">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>90</y>
+          <width>401</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background: white;
+border-radius: 10%</string>
+        </property>
+        <property name="text">
+         <string>Notification Sound Location</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="choose_file_btn">
+        <property name="geometry">
+         <rect>
+          <x>690</x>
+          <y>150</y>
+          <width>161</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color:white;
+background-color:rgb(4, 168, 227);
+border-radius:5%;</string>
+        </property>
+        <property name="text">
+         <string>Choose File</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_15">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>220</y>
+          <width>401</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background: white;
+border-radius: 10%</string>
+        </property>
+        <property name="text">
+         <string>Block Presets (default block)</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="preset_btn">
+        <property name="geometry">
+         <rect>
+          <x>690</x>
+          <y>280</y>
+          <width>161</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color:white;
+background-color:rgb(4, 168, 227);
+border-radius:5%;</string>
+        </property>
+        <property name="text">
+         <string>Save Preset</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_18">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>340</y>
+          <width>401</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background: white;
+border-radius: 10%</string>
+        </property>
+        <property name="text">
+         <string>Categories</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="category_btn">
+        <property name="geometry">
+         <rect>
+          <x>690</x>
+          <y>410</y>
+          <width>161</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color:white;
+background-color:rgb(4, 168, 227);
+border-radius:5%;</string>
+        </property>
+        <property name="text">
+         <string>Add</string>
+        </property>
+       </widget>
+       <widget class="QListWidget" name="categories_list">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>470</y>
+          <width>401</width>
+          <height>181</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Century Gothic</family>
+          <pointsize>12</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background: rgba(255,255,255,0.85); font-size:12pt;</string>
+        </property>
+        <item>
+         <property name="text">
+          <string>New Item</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>New Item</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>New Item</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>New Item</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>New Item</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>New Item</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>New Item</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>New Item</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>New Item</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>New Item</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>New Item</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>New Item</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>New Item</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QLineEdit" name="music_path_label">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>150</y>
+          <width>571</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color:rgb(206, 206, 206);
+border-radius: 5%;</string>
+        </property>
+        <property name="text">
+         <string>D:/Music/Bruh.Mp3</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="preset_label">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>280</y>
+          <width>571</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color:rgb(206, 206, 206);
+border-radius: 5%;</string>
+        </property>
+        <property name="text">
+         <string>5,25,60</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="category_label">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>410</y>
+          <width>571</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color:rgb(206, 206, 206);
+border-radius: 5%;</string>
+        </property>
+        <property name="text">
+         <string>Deep shit</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_16">
+        <property name="geometry">
+         <rect>
+          <x>450</x>
+          <y>10</y>
+          <width>311</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background: white;
+border-radius: 25%</string>
+        </property>
+        <property name="text">
+         <string>Settings</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="play_btn">
+        <property name="geometry">
+         <rect>
+          <x>890</x>
+          <y>150</y>
+          <width>41</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color:white;
+background-color:rgb(4, 168, 227);
+border-radius:5%;</string>
+        </property>
+        <property name="text">
+         <string>▶</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="timer_tab">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: qradialgradient(cx:0, cy:0, radius: 1,
+                fx:0.5, fy:0.5, stop:0 rgb(152, 24,55), stop:1 rgba(223,, 8, 0.5) );</string>
+       </property>
+       <attribute name="title">
+        <string>Current Timer</string>
+       </attribute>
+       <widget class="QLabel" name="label_17">
+        <property name="geometry">
+         <rect>
+          <x>450</x>
+          <y>10</y>
+          <width>311</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background: white;
+border-radius: 25%</string>
+        </property>
+        <property name="text">
+         <string>Current Timer</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="timer_task_label">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>110</y>
+          <width>401</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background: white;
+border-radius: 10%</string>
+        </property>
+        <property name="text">
+         <string>Task_Title_text</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="timer_category_label">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>180</y>
+          <width>401</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background: white;
+border-radius: 10%</string>
+        </property>
+        <property name="text">
+         <string>Timer_category_text</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="timer_task_label_2">
+        <property name="geometry">
+         <rect>
+          <x>670</x>
+          <y>110</y>
+          <width>291</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background: white;
+border-radius: 10%</string>
+        </property>
+        <property name="text">
+         <string>Current Block</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="timer_task_label_3">
+        <property name="geometry">
+         <rect>
+          <x>670</x>
+          <y>180</y>
+          <width>291</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background: white;
+border-radius: 10%</string>
+        </property>
+        <property name="text">
+         <string>Block Time</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="current_block_label">
+        <property name="geometry">
+         <rect>
+          <x>990</x>
+          <y>110</y>
+          <width>221</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background: rgb(121, 121, 121);
+border-radius: 25%;
+color:white</string>
+        </property>
+        <property name="text">
+         <string>3/5</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="block_time_label">
+        <property name="geometry">
+         <rect>
+          <x>990</x>
+          <y>180</y>
+          <width>221</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background: rgb(121, 121, 121);
+border-radius: 25%;
+color:white</string>
+        </property>
+        <property name="text">
+         <string>0h25m</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="timer_category_label_2">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>290</y>
+          <width>281</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background: white;
+border-radius: 10%</string>
+        </property>
+        <property name="text">
+         <string>Accumulated Time</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="accumulated_label">
+        <property name="geometry">
+         <rect>
+          <x>440</x>
+          <y>290</y>
+          <width>221</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background: rgb(121, 121, 121);
+border-radius: 25%;
+color:white</string>
+        </property>
+        <property name="text">
+         <string>3h2m</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLCDNumber" name="minutes_label">
+        <property name="geometry">
+         <rect>
+          <x>550</x>
+          <y>450</y>
+          <width>171</width>
+          <height>151</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:white</string>
+        </property>
+        <property name="smallDecimalPoint">
+         <bool>false</bool>
+        </property>
+        <property name="digitCount">
+         <number>2</number>
+        </property>
+        <property name="segmentStyle">
+         <enum>QLCDNumber::Flat</enum>
+        </property>
+        <property name="intValue" stdset="0">
+         <number>234</number>
+        </property>
+       </widget>
+       <widget class="QLabel" name="timer_category_label_3">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>380</y>
+          <width>371</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background: white;
+border-radius: 10%</string>
+        </property>
+        <property name="text">
+         <string>Current Block Time Spent</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLCDNumber" name="hours_label">
+        <property name="geometry">
+         <rect>
+          <x>300</x>
+          <y>450</y>
+          <width>171</width>
+          <height>151</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:white</string>
+        </property>
+        <property name="smallDecimalPoint">
+         <bool>false</bool>
+        </property>
+        <property name="digitCount">
+         <number>2</number>
+        </property>
+        <property name="segmentStyle">
+         <enum>QLCDNumber::Flat</enum>
+        </property>
+        <property name="intValue" stdset="0">
+         <number>234</number>
+        </property>
+       </widget>
+       <widget class="QLabel" name="timer_category_label_4">
+        <property name="geometry">
+         <rect>
+          <x>490</x>
+          <y>560</y>
+          <width>41</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background: white;
+border-radius: 10%</string>
+        </property>
+        <property name="text">
+         <string>H</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="timer_category_label_5">
+        <property name="geometry">
+         <rect>
+          <x>740</x>
+          <y>560</y>
+          <width>41</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background: white;
+border-radius: 10%</string>
+        </property>
+        <property name="text">
+         <string>M</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="taskNegativeButton">
+        <property name="geometry">
+         <rect>
+          <x>270</x>
+          <y>670</y>
+          <width>251</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color:white;
+background-color: rgb(255, 82, 39);
+border-radius:5%;</string>
+        </property>
+        <property name="text">
+         <string>Cancel Block</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="taskPositiveButton">
+        <property name="geometry">
+         <rect>
+          <x>740</x>
+          <y>670</y>
+          <width>251</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color:white;
+background-color: rgb(51, 122, 255);
+border-radius:5%;</string>
+        </property>
+        <property name="text">
+         <string>Finish Block Early</string>
+        </property>
+       </widget>
+       <widget class="QLCDNumber" name="seconds_label">
+        <property name="geometry">
+         <rect>
+          <x>800</x>
+          <y>450</y>
+          <width>171</width>
+          <height>151</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:white</string>
+        </property>
+        <property name="smallDecimalPoint">
+         <bool>false</bool>
+        </property>
+        <property name="digitCount">
+         <number>2</number>
+        </property>
+        <property name="segmentStyle">
+         <enum>QLCDNumber::Flat</enum>
+        </property>
+        <property name="intValue" stdset="0">
+         <number>234</number>
+        </property>
+       </widget>
+       <widget class="QLabel" name="timer_category_label_6">
+        <property name="geometry">
+         <rect>
+          <x>990</x>
+          <y>560</y>
+          <width>41</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background: white;
+border-radius: 10%</string>
+        </property>
+        <property name="text">
+         <string>S</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1261</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PlotWidget</class>
+   <extends>QWidget</extends>
+   <header>pyqtgraph</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

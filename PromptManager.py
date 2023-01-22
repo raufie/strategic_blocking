@@ -15,7 +15,7 @@ class PromptManager:
 
     def start_up(self):
         print(
-            " \u001b[35m**** "*4+"Welcome to the Systematic Blocker"+"**** "*4)
+            "\u001b[35m**** "*4+"Welcome to the Systematic Blocker"+"****  "*4)
 
     # DECORATORS
     def _cleaner_print(prompt_func):
