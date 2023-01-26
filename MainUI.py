@@ -41,7 +41,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.accumulated = 0
         # threads
         self.thread = {}
-        self.notifications = Notifications()
+        self.notifications = Notifications(get_music())
 
         # print(self.dataManager.get_data_from_file())
         self.update_plot1()
@@ -95,6 +95,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         except Exception as E:
             print(E)
         y = self.get_binned_hours(_from=_from, _to=_to)
+
         x = list(range(len(y)))
         x_str = [
             '12am',
@@ -151,7 +152,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
                 work_bins[self.get_interval(
                     item['timestamp'], item['time_amount'])] = item['time_amount']+prev
-        return work_bins
+        return (work_bins/3600)
 
     def is_date_greater(self, tm, d, m, y):
 
@@ -224,8 +225,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.choose_file_btn.clicked.connect(self.openFileNameDialog)
         self.preset_btn.clicked.connect(self.save_preset)
         self.category_btn.clicked.connect(self.add_category)
-        self.play_btn.clicked.connect(
-            lambda: self.notifications.play_sound(get_music()))
+        self.play_btn.clicked.connect(self.play_sound)
 
         # dateChanged
         self.from_daily.dateChanged.connect(lambda: self.update_plot1())
@@ -234,6 +234,17 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.to_avg.dateChanged.connect(lambda: self.update_plot2())
         # n days
         self.n_days.textChanged.connect(lambda: self.update_plot2())
+
+    def play_sound(self):
+        is_playing = self.notifications.play_sound(get_music())
+        if(is_playing):
+            self.play_btn.setText("⏸")
+        else:
+            self.play_btn.setText("▶")
+
+    def closeEvent(self, event):
+        print("EXITING APP")
+        exit()
 
     def load_table_from_presets(self):
         blocks = load_blocks_preset()
@@ -491,8 +502,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         t_s = (time.time()-self.startTime)  # minutes
         t_m = t_s//60
         t_h = t_m//60
+
         self.hours_label.display(int(t_h))
-        self.minutes_label.display(int(t_m))
+        self.minutes_label.display(int(t_m % 60))
         self.seconds_label.display(int(t_s % 60))
         # print()
         if self.current_timer != None:

@@ -108,7 +108,7 @@ def get_formatted(m):
 
 
 def get_formatted_seconds(s):
-    return f"{int(s)//3600}h{int(s)//60}m{int(int(s)%60)}s"
+    return f"{int(s)//3600}h{(int(s)//60)%60}m{int(int(s)%60)}s"
 # def load_pip
 
 
